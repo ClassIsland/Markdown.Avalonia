@@ -5,11 +5,10 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFrameworks>$(PackageTargetFrameworks)</TargetFrameworks>
-    <PackageId>Markdown.Avalonia.Svg</PackageId>
+    <PackageId>ClassIsland.Markdown.Avalonia.Svg</PackageId>
     <Version>$(PackageVersion)</Version>
     <Authors>grifsun; whistyun</Authors>
     <Copyright>Copyright (c) 2023 grifsun, whistyun</Copyright>
-    <PackageProjectUrl>https://github.com/whistyun/Markdown.Avalonia</PackageProjectUrl>
     <PackageReadmeFile>Markdown.Avalonia.Svg.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Company />

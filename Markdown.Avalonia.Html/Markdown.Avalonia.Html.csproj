@@ -5,12 +5,11 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFrameworks>$(PackageTargetFrameworks)</TargetFrameworks>
-    <PackageId>Markdown.Avalonia.Html</PackageId>
+    <PackageId>ClassIsland.Markdown.Avalonia.Html</PackageId>
     <Version>$(PackageVersion)</Version>
     <Authors>whistyun</Authors>
     <Description>html tag processor for Markdown.Avalonia</Description>     
     <Copyright>© Simon Baynes 2013; whistyun 2023</Copyright>        
-    <PackageProjectUrl>https://github.com/whistyun/Markdown.Avalonia</PackageProjectUrl>
     <PackageReadmeFile>Markdown.Avalonia.Html.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Company />

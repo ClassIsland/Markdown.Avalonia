@@ -5,15 +5,14 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFrameworks>$(PackageTargetFrameworks)</TargetFrameworks>
-    <PackageId>Markdown.Avalonia.Tight</PackageId>
+    <PackageId>ClassIsland.Markdown.Avalonia.Tight</PackageId>
     <AssemblyName>Markdown.Avalonia</AssemblyName>
     <RootNamespace>Markdown.Avalonia</RootNamespace>
     <Version>$(PackageVersion)</Version>
     <Authors>Bevan Arps(original); whistyun</Authors>
     <Company />
     <Description>Markdown Controls for Avalonia</Description>
-    <Copyright>Copyright (c) 2010 Bevan Arps, 2020 whistyun</Copyright>
-    <PackageProjectUrl>https://github.com/whistyun/Markdown.Avalonia</PackageProjectUrl>
+    <Copyright>Copyright (c) 2010 Bevan Arps, 2020 whistyun, 2025 ClassIsland</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>Markdown.Avalonia.Tight.md</PackageReadmeFile>
     <PackageTags>Markdown Avalonia Avaloniaui</PackageTags>

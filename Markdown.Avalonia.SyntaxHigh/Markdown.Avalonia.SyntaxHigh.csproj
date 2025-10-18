@@ -5,11 +5,10 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFrameworks>$(PackageTargetFrameworks)</TargetFrameworks>
-    <PackageId>Markdown.Avalonia.SyntaxHigh</PackageId>
+    <PackageId>ClassIsland.Markdown.Avalonia.SyntaxHigh</PackageId>
     <Version>$(PackageVersion)</Version>
     <Authors>whistyun</Authors>
     <Copyright>Copyright (c) 2021 whistyun</Copyright>
-    <PackageProjectUrl>https://github.com/whistyun/Markdown.Avalonia</PackageProjectUrl>
     <PackageReadmeFile>Markdown.Avalonia.SyntaxHigh.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Company />

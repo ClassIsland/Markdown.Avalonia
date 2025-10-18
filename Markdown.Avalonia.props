@@ -9,6 +9,9 @@
     <EnableAvaloniaEdit>enabled</EnableAvaloniaEdit>
     <AvaloniaEditVersion>11.0.0</AvaloniaEditVersion>
     <AvaloniaSvgVersion>11.0.0</AvaloniaSvgVersion>
+
+    <PackageProjectUrl>https://github.com/ClassIsland/Markdown.Avalonia</PackageProjectUrl>
+    
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(AVA_VER)' != '' ">

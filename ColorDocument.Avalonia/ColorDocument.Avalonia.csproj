@@ -6,12 +6,11 @@
     <TargetFrameworks>$(PackageTargetFrameworks)</TargetFrameworks>
     <Version>$(PackageVersion)</Version>
     <Authors>Bevan Arps(original); whistyun</Authors>
-    <PackageId>ColorDocument.Avalonia</PackageId>
+    <PackageId>ClassIsland.ColorDocument.Avalonia</PackageId>
 
     <Version>$(PackageVersion)</Version>
     <Authors>whistyun</Authors>
     <Copyright>Copyright (c) 2024 whistyun</Copyright>
-    <PackageProjectUrl>https://github.com/whistyun/Markdown.Avalonia/tree/master/ColorDocument.Avalonia/</PackageProjectUrl>
     <LangVersion>9</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Nullable>enable</Nullable>
