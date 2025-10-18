@@ -10,6 +10,10 @@ if ($(Test-Path ./out) -eq $false) {
     rm out/* -Recurse -Force
 }
 $tag = $(git describe --tags --abbrev=0)
+if ([System.String]::IsNullOrWhiteSpace($tag))
+{
+    $tag = "0.0.0.0"
+}
 $count = $(git rev-list --count HEAD)
 $ver = [System.Version]::Parse($tag)
 
