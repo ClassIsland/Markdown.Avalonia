@@ -27,6 +27,6 @@ echo Version:$($ver -as [string])
 #dotnet clean
 
 dotnet build -c Release -p:Platform="Any CPU" -p:Version=$($ver -as [string]) -p:PackageVersion=$($version -as [string])  -p:GeneratePackageOnBuild=True
-Copy-Item -Recurse -Force "./**/bin/**/Release/*.nupkg" ./out
+Copy-Item -Recurse -Force "./**/bin/Release/*.nupkg" ./out
 
 Get-ChildItem ./out
