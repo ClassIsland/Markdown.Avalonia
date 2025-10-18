@@ -1,55 +1,37 @@
-name: .NET
+name: Build
 
 on:
   pull_request:
     branches: [ master ]
   workflow_dispatch:
+  push:
 
 jobs:
   build:
     runs-on: windows-latest
 
-    strategy:
-      matrix:
-        versions: [ 11.0.10, 11.1.0-beta1 ]
-
     steps:
     - uses: actions/checkout@v2
       with:
           submodules: 'true'
-    - name: Install component on windows 2022
-      shell: pwsh
+    - name: Build Nuget packages
+      env:
+        is_release: ${{ startsWith(github.ref, 'refs/tags/') }}
       run: |
-        Set-Location "C:\Program Files (x86)\Microsoft Visual Studio\Installer\"
-        $InstallPath = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
-        $componentsToAdd = @(
-          "Microsoft.Net.Component.4.6.1.SDK"
-        )
-        [string]$workloadArgs = $componentsToAdd | ForEach-Object {" --add " +  $_}
-        $Arguments = ('/c', "vs_installer.exe", 'modify', '--installPath', "`"$InstallPath`"",$workloadArgs, '--quiet', '--norestart', '--nocache')
-        $process = Start-Process -FilePath cmd.exe -ArgumentList $Arguments -Wait -PassThru -WindowStyle Hidden
-        if ($process.ExitCode -eq 0)
-        {
-            Write-Host "components have been successfully added"
-        }
-        else
-        {
-            Write-Host "components were not installed"
-            exit 1
-        }
-    - name: Clean
-      run: dotnet clean
+        ls
+        pwsh -ep Bypass -c ./tools/publish-nupkg.ps1 $env:is_release
+    - name: Upload Nuget packages to GitHub registry
+      if: ${{ github.event_name != 'pull_request' }}
       env:
-        AVA_VER: ${{ matrix.versions }}
-    - name: Restore
-      run: dotnet restore
+        GHPKG_KEY: ${{ secrets.GHPKG_KEY }}
+      run: |
+        dotnet nuget add source --username HelloWRC --password $env:GHPKG_KEY --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ClassIsland/index.json"
+        dotnet nuget push .\out\*.nupkg -k $env:GHPKG_KEY --source "github" --skip-duplicate
+    - name: Upload Nuget packages to NuGet Gallery
+      if: ${{ github.event.inputs.release_tag && github.event_name != 'pull_request' }}
       env:
-        AVA_VER: ${{ matrix.versions }}
-    - name: Build
-      run: dotnet build --no-restore
-      env:
-        AVA_VER: ${{ matrix.versions }}
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-      env:
-        AVA_VER: ${{ matrix.versions }}
+        NUGET_KEY: ${{ secrets.NUGET_ORG_KEY }}
+      run: |
+        ls
+        cd out
+        dotnet nuget push *.nupkg -k $env:NUGET_KEY -s https://api.nuget.org/v3/index.json --skip-duplicate
