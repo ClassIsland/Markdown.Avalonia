@@ -312,6 +312,11 @@ namespace Markdown.Avalonia
             if (_wrapper.Document is null && String.IsNullOrEmpty(Markdown))
                 return;
 
+            if (VisualRoot == null)
+            {
+                return;
+            }
+
             _document = _engine.TransformElement(Markdown ?? "");
             _document.Control.Classes.Add("Markdown_Avalonia_MarkdownViewer");
 
