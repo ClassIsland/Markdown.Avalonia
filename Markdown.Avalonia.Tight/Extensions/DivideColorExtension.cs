@@ -32,7 +32,7 @@ namespace Markdown.Avalonia.Extensions
             {
                 left = new Binding()
                 {
-                    Source = leftColor
+                    Source = new SolidColorBrush(leftColor) 
                 };
             }
             else
@@ -46,7 +46,7 @@ namespace Markdown.Avalonia.Extensions
             {
                 right = new Binding()
                 {
-                    Source = rightColor
+                    Source = new SolidColorBrush(rightColor)
                 };
             }
             else
