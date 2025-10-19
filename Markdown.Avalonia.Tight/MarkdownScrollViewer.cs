@@ -21,6 +21,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
+using Avalonia.LogicalTree;
 using MdStyle = Markdown.Avalonia.MarkdownStyle;
 
 namespace Markdown.Avalonia
@@ -146,6 +147,13 @@ namespace Markdown.Avalonia
 
             _wrapper = new Wrapper(this);
             _viewer.Content = _wrapper;
+        }
+
+        protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+        {
+            base.OnAttachedToVisualTree(e);
+            
+            UpdateMarkdown();
         }
 
         #region text selection
