@@ -4,8 +4,8 @@
     <DemoAppTargetFrameworks>net8</DemoAppTargetFrameworks>
     <TestTargetFrameworks>net8</TestTargetFrameworks>
     <PackageTargetFrameworks>net8</PackageTargetFrameworks>
-    <AvaloniaVersion>11.3.7</AvaloniaVersion>
-    <DemoAvaloniaVersion>11.3.7</DemoAvaloniaVersion>
+    <AvaloniaVersion>11.3.6</AvaloniaVersion>
+    <DemoAvaloniaVersion>11.3.6</DemoAvaloniaVersion>
     <EnableAvaloniaEdit>enabled</EnableAvaloniaEdit>
     <AvaloniaEditVersion>11.0.0</AvaloniaEditVersion>
     <AvaloniaSvgVersion>11.0.0</AvaloniaSvgVersion>
